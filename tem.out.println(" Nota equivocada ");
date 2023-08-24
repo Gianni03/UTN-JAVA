@@ -1,0 +1,420 @@
+[33mcommit fd4826149ef264c0a71c6da849e036487516819f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: semestre1[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Gianni Pasquinelli <giannipasquinelli@gmail.com>
+Date:   Thu Jun 29 12:41:30 2023 -0300
+
+    clase 10, sentencias de control
+
+[1mdiff --git a/clase09/.idea/.gitignore b/clase09/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..26d3352[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/.gitignore[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[1mdiff --git a/clase09/.idea/clase09.iml b/clase09/.idea/clase09.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d6ebd48[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/clase09.iml[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="JAVA_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager" inherit-compiler-output="true">[m
+[32m+[m[32m    <exclude-output />[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/.idea/codeStyles/Project.xml b/clase09/.idea/codeStyles/Project.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e3ca7da[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/codeStyles/Project.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<component name="ProjectCodeStyleConfiguration">[m
+[32m+[m[32m  <code_scheme name="Project" version="173">[m
+[32m+[m[32m    <ScalaCodeStyleSettings>[m
+[32m+[m[32m      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />[m
+[32m+[m[32m    </ScalaCodeStyleSettings>[m
+[32m+[m[32m    <codeStyleSettings language="JAVA">[m
+[32m+[m[32m      <indentOptions>[m
+[32m+[m[32m        <option name="INDENT_SIZE" value="2" />[m
+[32m+[m[32m        <option name="CONTINUATION_INDENT_SIZE" value="4" />[m
+[32m+[m[32m        <option name="TAB_SIZE" value="2" />[m
+[32m+[m[32m      </indentOptions>[m
+[32m+[m[32m    </codeStyleSettings>[m
+[32m+[m[32m  </code_scheme>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/.idea/codeStyles/codeStyleConfig.xml b/clase09/.idea/codeStyles/codeStyleConfig.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a55e7a1[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/codeStyles/codeStyleConfig.xml[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m<component name="ProjectCodeStyleConfiguration">[m
+[32m+[m[32m  <state>[m
+[32m+[m[32m    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />[m
+[32m+[m[32m  </state>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/.idea/misc.xml b/clase09/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e2ca0b8[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/misc.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">[m
+[32m+[m[32m    <output url="file://$PROJECT_DIR$/out" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/.idea/modules.xml b/clase09/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..40608d4[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/modules.xml[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/Ejercicio7/Ejercicio7.iml" filepath="$PROJECT_DIR$/Ejercicio7/Ejercicio7.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/clase09.iml" filepath="$PROJECT_DIR$/.idea/clase09.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/ejercicio5/ejercicio5.iml" filepath="$PROJECT_DIR$/ejercicio5/ejercicio5.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/ejercicio6/ejercicio6.iml" filepath="$PROJECT_DIR$/ejercicio6/ejercicio6.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/.idea/vcs.xml b/clase09/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6c0b863[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/.idea/.gitignore b/clase09/Clase10/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..26d3352[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/.gitignore[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[1mdiff --git a/clase09/Clase10/.idea/codeStyles/Project.xml b/clase09/Clase10/.idea/codeStyles/Project.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e3ca7da[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/codeStyles/Project.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<component name="ProjectCodeStyleConfiguration">[m
+[32m+[m[32m  <code_scheme name="Project" version="173">[m
+[32m+[m[32m    <ScalaCodeStyleSettings>[m
+[32m+[m[32m      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />[m
+[32m+[m[32m    </ScalaCodeStyleSettings>[m
+[32m+[m[32m    <codeStyleSettings language="JAVA">[m
+[32m+[m[32m      <indentOptions>[m
+[32m+[m[32m        <option name="INDENT_SIZE" value="2" />[m
+[32m+[m[32m        <option name="CONTINUATION_INDENT_SIZE" value="4" />[m
+[32m+[m[32m        <option name="TAB_SIZE" value="2" />[m
+[32m+[m[32m      </indentOptions>[m
+[32m+[m[32m    </codeStyleSettings>[m
+[32m+[m[32m  </code_scheme>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/.idea/codeStyles/codeStyleConfig.xml b/clase09/Clase10/.idea/codeStyles/codeStyleConfig.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a55e7a1[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/codeStyles/codeStyleConfig.xml[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m<component name="ProjectCodeStyleConfiguration">[m
+[32m+[m[32m  <state>[m
+[32m+[m[32m    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />[m
+[32m+[m[32m  </state>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/.idea/misc.xml b/clase09/Clase10/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d15472f[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/misc.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">[m
+[32m+[m[32m    <output url="file://$PROJECT_DIR$/out" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/.idea/modules.xml b/clase09/Clase10/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5e23a12[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/Clase10.iml" filepath="$PROJECT_DIR$/Clase10.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/.idea/vcs.xml b/clase09/Clase10/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b2bdec2[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/Clase10.iml b/clase09/Clase10/Clase10.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c90834f[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/Clase10.iml[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="JAVA_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager" inherit-compiler-output="true">[m
+[32m+[m[32m    <exclude-output />[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$">[m
+[32m+[m[32m      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />[m
+[32m+[m[32m    </content>[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/out/production/Clase10/Condicional.class b/clase09/Clase10/out/production/Clase10/Condicional.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f63bf6c[m
+Binary files /dev/null and b/clase09/Clase10/out/production/Clase10/Condicional.class differ
+[1mdiff --git a/clase09/Clase10/out/production/Clase10/ControlSwitch.class b/clase09/Clase10/out/production/Clase10/ControlSwitch.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..279b18c[m
+Binary files /dev/null and b/clase09/Clase10/out/production/Clase10/ControlSwitch.class differ
+[1mdiff --git a/clase09/Clase10/out/production/Clase10/Estaciones.class b/clase09/Clase10/out/production/Clase10/Estaciones.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bd61024[m
+Binary files /dev/null and b/clase09/Clase10/out/production/Clase10/Estaciones.class differ
+[1mdiff --git a/clase09/Clase10/out/production/Clase10/Main.class b/clase09/Clase10/out/production/Clase10/Main.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..feb38ca[m
+Binary files /dev/null and b/clase09/Clase10/out/production/Clase10/Main.class differ
+[1mdiff --git a/clase09/Clase10/out/production/Clase10/Notas.class b/clase09/Clase10/out/production/Clase10/Notas.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..70fbd09[m
+Binary files /dev/null and b/clase09/Clase10/out/production/Clase10/Notas.class differ
+[1mdiff --git a/clase09/Clase10/src/Condicional.java b/clase09/Clase10/src/Condicional.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2fa84bf[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/src/Condicional.java[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m
+[32m+[m[32mpublic class Condicional {[m
+[32m+[m[32m  public static void main(String[] args) {[m
+[32m+[m[32m    // ejercicio estaciones del año[m
+[32m+[m[32m    Scanner entrada = new Scanner(System.in);[m
+[32m+[m[32m    System.out.println("ingrese un mes, en formato número (1-12):  ");[m
+[32m+[m[32m    var mes = Integer.parseInt(entrada.nextLine());[m
+[32m+[m[32m    var estacion = "Error";[m
+[32m+[m[32m    if (mes == 1 || mes == 2 || mes == 3) {[m
+[32m+[m[32m      estacion = "Verano";[m
+[32m+[m[32m    } else if (mes == 4 || mes == 5 || mes == 6) {[m
+[32m+[m[32m      estacion = "Otoño";[m
+[32m+[m[32m    } else if (mes == 7 || mes == 8 || mes == 9) {[m
+[32m+[m[32m      estacion = "Invierno";[m
+[32m+[m[32m    } else if (mes == 10 || mes == 11 || mes == 12) {[m
+[32m+[m[32m      estacion = "Verano";[m
+[32m+[m[32m    } else {[m
+[32m+[m[32m      estacion = "Error de mes ingresado";[m
+[32m+[m[32m    }[m
+[32m+[m[32m    System.out.println("estacion = " + estacion);[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/clase09/Clase10/src/ControlSwitch.java b/clase09/Clase10/src/ControlSwitch.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..faef737[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/src/ControlSwitch.java[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32mpublic class ControlSwitch {[m
+[32m+[m[32m  public static void main(String[] args) {[m
+[32m+[m[32m    var numero = 2;[m
+[32m+[m[32m    var numeroTexto = "error";[m
+[32m+[m
+[32m+[m[32m    switch(numero){[m
+[32m+[m[32m      case 1:[m
+[32m+[m[32m        numeroTexto = "Número uno";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 2:[m
+[32m+[m[32m        numeroTexto = "Número dos";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 3:[m
+[32m+[m[32m        numeroTexto = "Número tres";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 4:[m
+[32m+[m[32m        numeroTexto = "Número cuatro";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      default:[m
+[32m+[m[32m        numeroTexto = "Error";[m
+[32m+[m[32m    }[m
+[32m+[m[32m    System.out.println("numeroTexto = " + numeroTexto);[m
+[32m+[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/clase09/Clase10/src/Estaciones.java b/clase09/Clase10/src/Estaciones.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d4b8502[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/src/Estaciones.java[m
+[36m@@ -0,0 +1,28 @@[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m
+[32m+[m[32mpublic class Estaciones {[m
+[32m+[m[32m  public static void main(String[] args) {[m
+[32m+[m[32m    Scanner entrada = new Scanner(System.in);[m
+[32m+[m[32m    System.out.println("ingrese un mes, en formato número (1-12):  ");[m
+[32m+[m[32m    var mes = Integer.parseInt(entrada.nextLine());[m
+[32m+[m[32m    var estacion = "desconocida";[m
+[32m+[m[32m    switch(mes){[m
+[32m+[m[32m      case 1,2,3:[m
+[32m+[m[32m        estacion = "Verano";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 4,5,6:[m
+[32m+[m[32m        estacion = "Otoño";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 7,8,9:[m
+[32m+[m[32m        estacion = "Invierno";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 10,11,12:[m
+[32m+[m[32m        estacion = "Primavera";[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      default:[m
+[32m+[m[32m        estacion = "desconocida";[m
+[32m+[m[32m    }[m
+[32m+[m[32m    System.out.println("estacion = " + estacion);[m
+[32m+[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/clase09/Clase10/src/Main.java b/clase09/Clase10/src/Main.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6734ca0[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/src/Main.java[m
+[36m@@ -0,0 +1,28 @@[m
+[32m+[m[32mpublic class Main {[m
+[32m+[m[32m  public static void main(String[] args) {[m
+[32m+[m[32m  // Sentencias de control[m
+[32m+[m[32m    var condicion = true;[m
+[32m+[m[32m    if (condicion){[m
+[32m+[m[32m       System.out.println("condicion = " + condicion);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    else {[m
+[32m+[m[32m       System.out.println("condicion = " + condicion);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    var num1 = 2;[m
+[32m+[m[32m    var numerotexto = "Número desconocido";[m
+[32m+[m[32m    if (num1 == 1){[m
+[32m+[m[32m      numerotexto = "Número uno";[m
+[32m+[m[32m    } else if (num1 == 2) {[m
+[32m+[m[32m      numerotexto = "Número dos";[m
+[32m+[m[32m    } else if (num1 == 3) {[m
+[32m+[m[32m      numerotexto = "Número tres";[m
+[32m+[m[32m    }else {[m
+[32m+[m[32m      numerotexto = "Número no encontrado";[m
+[32m+[m[32m    }[m
+[32m+[m[32m    System.out.println(numerotexto);[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/clase09/Clase10/src/Notas.java b/clase09/Clase10/src/Notas.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5e0144d[m
+[1m--- /dev/null[m
+[1m+++ b/clase09/Clase10/src/Notas.java[m
+[36m@@ -0,0 +1,43 @@[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m
+[32m+[m[32mpublic class Notas {[m
+[32m+[m[32m  public static void main(String[] args) {[m
+[32m+[m[32m    Scanner entrada = new Scanner(System.in);[m
+[32m+[m[32m    System.out.println("ingrese una nota (1 - 10): ");[m
+[32m+[m[32m    var nota = Integer.parseInt(entrada.nextLine());[m
+[32m+[m[32m    if (nota >= 9 && nota <=10){[m
+[32m+[m[32m      System.out.println(" A ");[m
+[32m+[m[32m    }else if (nota == 8 ){[m
+[32m+[m[32m      System.out.println(" B ");[m
+[32m+[m[32m    }else if (nota == 7){[m
+[32m+[m[32m      System.out.println(" C ");[m
+[32m+[m[32m    }else if (nota == 6){[m
+[32m+[m[32m      System.out.println(" D ");[m
+[32m+[m[32m    }else if (nota >= 1 && nota < 6){[m
+[32m+[m[32m      System.out.println(" F ");[m
+[32m+[m[32m    }else{[m
+[32m+[m[32m      System.out.println(" Nota equivocada ");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    switch (nota){[m
+[32m+[m[32m      case 10,9:[m
+[32m+[m[32m        System.out.println(" A ");[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 8:[m
+[32m+[m[32m        System.out.println(" B ");[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 7:[m
+[32m+[m[32m        System.out.println(" C ");[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 6:[m
+[32m+[m[32m        System.out.println(" D ");[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      case 1,2,3,4,5:[m
+[32m+[m[32m        System.out.println(" F ");[m
+[32m+[m[32m        break;[m
+[32m+[m[32m      default:[m
+[32m+[m[32m        System.out.println(" Nota equivocada ");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/clase09/out/production/Ejercicio7/Ejercicio7.class b/clase09/out/production/Ejercicio7/Ejercicio7.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..769a0c8[m
+Binary files /dev/null and b/clase09/out/production/Ejercicio7/Ejercicio7.class differ
+[1mdiff --git a/clase09/out/production/ejercicio5/Ejercicio5.class b/clase09/out/production/ejercicio5/Ejercicio5.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..38a3891[m
+Binary files /dev/null and b/clase09/out/production/ejercicio5/Ejercicio5.class differ
+[1mdiff --git a/clase09/out/production/ejercicio6/Ejercicio6.class b/clase09/out/production/ejercicio6/Ejercicio6.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c3883d2[m
+Binary files /dev/null and b/clase09/out/production/ejercicio6/Ejercicio6.class differ
